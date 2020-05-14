@@ -1,4 +1,4 @@
-# Whats App robot
+# Whats App Robot
 
 ## Running your own Bot:
  
