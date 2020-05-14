@@ -55,4 +55,3 @@ for i in range(100):
     bot.send_message(message, chat)
     sleep(0.5)
     
-    
