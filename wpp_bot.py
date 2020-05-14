@@ -50,8 +50,7 @@ bot = WhatsBot()
 chat = bot.get_chat('<your_chat>')
 
 for i in range(100): 
-    message = f'bot: {i+1}'
-    sleep(0.5)
+    message = f' bot: {i+1}'
     bot.send_message(message, chat)
     sleep(0.5)
     
