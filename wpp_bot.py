@@ -14,20 +14,20 @@ class WhatsBot:
 
     def get_chat(self, who):
         bot = self.driver
-        location = f"//span[@title='{who}']"  # to selenium be able find the element, it must be one of the 10 latest ones, older conversations will not work
+        is_logged_in_locator = '/html/body/div[1]/div/div/div[3]/div/div[1]'
         print('Waiting for QR code scan...')
 
         try:
-            WebDriverWait(bot, 60).until(EC.presence_of_element_located((By.XPATH, location)))  # waits for the user to scan the QR code
+            WebDriverWait(bot, 60).until(EC.presence_of_element_located((By.XPATH, is_logged_in_locator)))  # waits for the user to scan the QR code
             print('QR code found!')
         except SeleniumEXC.TimeoutException:
             print('QR code not found, try again.')
             exit()
 
         try:
-            chat = bot.find_element_by_xpath(location)
+            chat = bot.find_element_by_xpath(f"//span[@title='{who}']")
             chat.click()
-        except SeleniumEXC:
+        except SeleniumEXC.NoSuchElementException:
             print('Wrong chat name, try again.')
             exit()
 
@@ -39,7 +39,6 @@ class WhatsBot:
         while True:
             try:
                 msg_box.send_keys(message)
-                sleep(0.5)  # you can remove all the waits but the message may be sent different because you are going too fast
                 self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[3]/button').click()
                 break
             except SeleniumEXC.NoSuchElementException:
@@ -47,10 +46,10 @@ class WhatsBot:
 
 
 bot = WhatsBot()
-chat = bot.get_chat('<your_chat>')
+chat = bot.get_chat('ororwofnwogn')
 
-for i in range(100): 
-    message = f' bot: {i+1}'
+for i in range(10):
+    message = f' bot: oi to testando {i+1}'
     bot.send_message(message, chat)
-    sleep(0.5)
-    
+
+print("Finished sending the messages.")
