@@ -39,7 +39,7 @@ class WhatsBot:
         while True:
             try:
                 msg_box.send_keys(message)
-                sleep(0.5)  # you can remove the wait but the message may be sent different because you are going too fast
+                sleep(0.5)  # you can remove all the waits but the message may be sent different because you are going too fast
                 self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[3]/button').click()
                 break
             except SeleniumEXC.NoSuchElementException:
