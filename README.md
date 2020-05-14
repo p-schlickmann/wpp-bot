@@ -6,8 +6,7 @@
 2. Run the following line of code on **terminal** (MacOS, Linux) or **cmd** (Windows) to install [Selenium](https://www.selenium.dev/) library:  
 `pip install selenium`  
 3. Choose the chat you want to send the message at line 50     
-4. Run the python file:   
-`python3 wpp_bot.py`
+4. Run the python file with the command `python3 wpp_bot.py`
 
 ### Customize your message:  
 line 52: How many times you want to send it.   
