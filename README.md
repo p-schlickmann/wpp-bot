@@ -6,7 +6,7 @@
 2. Run the following line of code on **terminal** (MacOS, Linux) or **cmd** (Windows) to install [Selenium](https://www.selenium.dev/) library:  
 `pip install selenium`  
 3. Choose the chat you want to send the message at line 50. NOTE: You must choose an existing recent conversation(top 10) to selenium be able to find the element!    
-4. Run the python file with the command `python3 wpp_bot.py`
+4. Run the python file with the command `python wpp_bot.py`
 
 ### Customize your message:  
 line 52: How many times you want to send it.   
